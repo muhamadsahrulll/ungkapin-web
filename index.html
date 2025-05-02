@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ungkap.in</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Firebase SDKs -->
+  <script type="module"> 
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+  </script>
+  
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo-circle">U</div>
+      <span class="brand-name">ungkap.in</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#deskripsi">Deskripsi</a></li>
+      <li><a href="#features">Fitur</a></li>
+      <li><a href="#ungkapin">Ungkapkan</a></li>
+      <li><a href="#about">Tentang</a></li>
+    </ul>
+    <div class="nav-right">
+      <!--<button class="theme-toggle" id="toggleTheme">☀</button>-->
+      <!--<a href="#" class="login-btn">Login</a> -->
+    </div>
+  </nav>
+  
+
+  <!-- Deskripsi -->
+  <section class="deskripsi-section" id="deskripsi">
+    <div class="deskripsi-container">
+      <div class="deskripsi-left">
+        <p class="badge">Suaramu Layak Didengar</p>
+        <h1><strong>Ungkap, Bagikan, & Jadi Diri Sendiri</strong><br />— Bersama <span class="highlight">ungkap.in</span></h1>
+        <p class="desc-text">
+          Buat pengakuan tanpa takut dihakimi. Ceritakan isi hatimu, sampaikan unek-unekmu, dan biarkan kami jadi wadah aman untuk perasaanmu.
+        </p>
+        <div class="deskripsi-buttons">
+          <a href="#submission" class="primary-btn">Ungkapin Perasaan Kamu</a>
+          <a href="#ungkapin" class="secondary-btn">Lihat Catatan</a>
+        </div>
+      </div>
+      <div class="deskripsi-right">
+        <img src="banner.png" alt="Ilustrasi Ungkapin" />
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Features -->
+<section id="features" class="features-section">
+  <div class="container">
+    <h2>Fitur Ungkap.in</h2>
+    <p>Platform untuk mengungkapkan isi hati secara aman dan anonim.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon" style="background-color: #fbd38d;">🧑</div>
+        <h3>Anonim</h3>
+        <p>Tulisanmu tidak akan menampilkan nama atau identitas apa pun, menjaga privasimu sepenuhnya.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon" style="background-color: #c6f6d5;">📄</div>
+        <h3>Maks 200 Kata</h3>
+        <p>Setiap kiriman dibatasi 200 kata agar tetap singkat, padat, dan bermakna.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon" style="background-color: #bee3f8;">📤</div>
+        <h3>Langsung Tayang</h3>
+        <p>Kirimanmu langsung tampil tanpa perlu proses seleksi atau moderasi yang lama.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ungkapin (3 Ungkapan Terbaru) -->
+<section id="ungkapin" class="ungkapin-section">
+  <div class="container">
+    <h2>Ungkapan Terbaru</h2>
+    <p>Lihat beberapa perasaan terbaru yang dibagikan secara anonim.</p>
+
+    <div id="latestSubmissions" class="ungkapin-grid"></div>
+
+    <div class="lihat-semua-container">
+      <a href="semua.html" class="lihat-semua-btn">Lihat Semua</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Submission Section -->
+  <section id="submission" class="section-grey-background">
+    <div class="container">
+      <center><h2>Ungkapkan Sekarang</h2></center>
+      <form id="submissionForm">
+        <input type="text" id="name" placeholder="Nama (Anonim diperbolehkan)" />
+        <textarea id="message" placeholder="Tulis perasaanmu (maks 200 kata)" maxlength="1500"></textarea>
+        <center><button class="primary-btn" type="submit">Kirim</button></center>
+      </form>
+  
+      <div id="notif" class="notif">Ungkapan berhasil dikirim!</div>
+  
+      <div id="latestSubmissions" class="submission-grid"></div>
+  
+      
+    </div>
+  </section>
+
+  <!-- About Me -->
+<footer id="about">
+  <h3>Dibuat oleh Sadako</h3>
+  <p>Game Developer</p>
+  <div class="socials">
+    <a href="https://github.com/muhamadsahrulll" target="_blank" class="social-icon">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://www.instagram.com/sahrulllxd/" target="_blank" class="social-icon">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </div>
+</footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
