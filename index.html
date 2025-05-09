@@ -12,6 +12,7 @@
   </script>
   
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -20,15 +21,23 @@
       <div class="logo-circle">U</div>
       <span class="brand-name">ungkap.in</span>
     </div>
-    <ul class="nav-menu">
+  
+    
+    <button class="hamburger" id="hamburger">
+      <span class="open">&#9776;</span> <!-- ☰ -->
+      <span class="close" style="display: none;">&times;</span> <!-- ✕ -->
+    </button>
+  
+    <ul class="nav-menu" id="navMenu">
       <li><a href="#deskripsi">Deskripsi</a></li>
       <li><a href="#features">Fitur</a></li>
       <li><a href="#ungkapin">Ungkapkan</a></li>
       <li><a href="#about">Tentang</a></li>
     </ul>
+  
     <div class="nav-right">
-      <!--<button class="theme-toggle" id="toggleTheme">☀</button>-->
-      <!--<a href="#" class="login-btn">Login</a> -->
+      <!-- Optional -->
+      
     </div>
   </nav>
   
@@ -130,5 +139,19 @@
 </footer>
 
   <script type="module" src="script.js"></script>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+    const openIcon = hamburger.querySelector(".open");
+    const closeIcon = hamburger.querySelector(".close");
+  
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+      const isOpen = navMenu.classList.contains("show");
+  
+      openIcon.style.display = isOpen ? "none" : "inline";
+      closeIcon.style.display = isOpen ? "inline" : "none";
+    });
+  </script>
 </body>
 </html>

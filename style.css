@@ -21,13 +21,15 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
   background-color: var(--bg);
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid rgb(255, 255, 255);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -36,7 +38,7 @@ body {
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-circle {
@@ -63,6 +65,7 @@ body {
 .nav-menu {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 32px;
   margin: 0;
   padding: 0;
@@ -72,17 +75,51 @@ body {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
-  transition: color 0.2s;
+  padding: 8px 12px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 6px;
 }
 
 .nav-menu li a:hover {
-  color: var(--accent);
+  background-color: var(--accent);
+  color: white;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+.hamburger {
+  display: none; /* Default: tidak muncul di desktop */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--bg);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid black;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
 .theme-toggle {
