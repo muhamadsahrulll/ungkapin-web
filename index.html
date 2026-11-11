@@ -1,157 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ungkap.in</title>
+  <title>Ungkap.in — Ungkapkan Isi Hatimu Secara Anonim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <!-- Firebase SDKs -->
-  <script type="module"> 
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-  </script>
-  
 </head>
-
 <body>
-
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="nav-left">
+    <a href="#deskripsi" class="nav-left">
       <div class="logo-circle">U</div>
       <span class="brand-name">ungkap.in</span>
-    </div>
-  
-    
-    <button class="hamburger" id="hamburger">
-      <span class="open">&#9776;</span> <!-- ☰ -->
-      <span class="close" style="display: none;">&times;</span> <!-- ✕ -->
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
+      <span class="open">&#9776;</span>
+      <span class="close" style="display: none;">&times;</span>
     </button>
-  
+
     <ul class="nav-menu" id="navMenu">
       <li><a href="#deskripsi">Deskripsi</a></li>
       <li><a href="#features">Fitur</a></li>
-      <li><a href="#ungkapin">Ungkapkan</a></li>
+      <li><a href="#ungkapin">Ungkapan</a></li>
       <li><a href="#about">Tentang</a></li>
+      <li><a href="#submission" class="nav-cta">Ungkapkan</a></li>
     </ul>
-  
-    <div class="nav-right">
-      <!-- Optional -->
-      
-    </div>
   </nav>
-  
 
-  <!-- Deskripsi -->
-  <section class="deskripsi-section" id="deskripsi">
-    <div class="deskripsi-container">
-      <div class="deskripsi-left">
-        <p class="badge">Suaramu Layak Didengar</p>
-        <h1><strong>Ungkap, Bagikan, & Jadi Diri Sendiri</strong><br />— Bersama <span class="highlight">ungkap.in</span></h1>
-        <p class="desc-text">
-          Buat pengakuan tanpa takut dihakimi. Ceritakan isi hatimu, sampaikan unek-unekmu, dan biarkan kami jadi wadah aman untuk perasaanmu.
-        </p>
-        <div class="deskripsi-buttons">
-          <a href="#submission" class="primary-btn">Ungkapin Perasaan Kamu</a>
-          <a href="#ungkapin" class="secondary-btn">Lihat Catatan</a>
+  <!-- HERO / DESKRIPSI -->
+  <section class="deskripsi-section dot-bg" id="deskripsi">
+    <!-- Decorative peeking cylinder like reference image -->
+    <div class="decor-cylinder" aria-hidden="true"></div>
+
+    <div class="hero-frame">
+      <!-- 4 Selection-box corner handles -->
+      <span class="corner-handle tl" aria-hidden="true"></span>
+      <span class="corner-handle tr" aria-hidden="true"></span>
+      <span class="corner-handle bl" aria-hidden="true"></span>
+      <span class="corner-handle br" aria-hidden="true"></span>
+
+      <!-- Top-left pinned ribbon badge -->
+      <div class="ribbon-tag">
+        <span class="pin-dot tl" aria-hidden="true"></span>
+        <span class="pin-dot tr" aria-hidden="true"></span>
+        <span class="pin-dot bl" aria-hidden="true"></span>
+        <span class="pin-dot br" aria-hidden="true"></span>
+        SUARAMU LAYAK DIDENGAR
+      </div>
+
+      <!-- Top-right intersecting grid + overlapping sticker -->
+      <div class="hero-grid-decor" aria-hidden="true">
+        <svg class="grid-lines-svg" viewBox="0 0 110 96" fill="none">
+          <line x1="28" y1="4" x2="28" y2="92" stroke="#000" stroke-width="2" />
+          <line x1="72" y1="4" x2="72" y2="92" stroke="#000" stroke-width="2" />
+          <line x1="4" y1="32" x2="106" y2="32" stroke="#000" stroke-width="2" />
+          <line x1="4" y1="68" x2="106" y2="68" stroke="#000" stroke-width="2" />
+          <circle cx="28" cy="32" r="5" fill="#000" />
+          <circle cx="28" cy="68" r="4" fill="#000" />
+          <circle cx="72" cy="68" r="5" fill="#000" />
+        </svg>
+        <div class="sticker-back"></div>
+        <div class="sticker-front" title="Ruang Aman Anonim">
+          <svg viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 7h18v12H11l-6 4V7z" fill="#FE90E8" />
+            <line x1="9" y1="12" x2="19" y2="12" />
+            <line x1="9" y1="15.5" x2="15" y2="15.5" />
+          </svg>
         </div>
       </div>
-      <div class="deskripsi-right">
-        <img src="banner.png" alt="Ilustrasi Ungkapin" />
+
+      <div class="deskripsi-container">
+        <div class="deskripsi-left">
+          <div class="hero-eyebrow-row">
+            <span class="eyebrow-text">RUANG CERITA ANONIM</span>
+            <!-- Green circle with 3 diagonal black stripes -->
+            <svg class="striped-circle-svg" viewBox="0 0 64 64" width="52" height="52" aria-hidden="true">
+              <circle cx="33" cy="33" r="21" fill="#99E885" stroke="#000" stroke-width="2.5" />
+              <line x1="12" y1="12" x2="52" y2="52" stroke="#000" stroke-width="3.5" stroke-linecap="round" />
+              <line x1="17" y1="7" x2="57" y2="47" stroke="#000" stroke-width="3.5" stroke-linecap="round" />
+              <line x1="7" y1="17" x2="47" y2="57" stroke="#000" stroke-width="3.5" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <h1>
+            UNGKAP, BAGIKAN, &amp; JADI DIRI SENDIRI
+            <span class="title-subline">— Bersama <span class="highlight">ungkap.in</span></span>
+          </h1>
+
+          <p class="desc-text">
+            Buat pengakuan tanpa takut dihakimi. Ceritakan isi hatimu, sampaikan unek-unekmu, dan biarkan kami jadi wadah aman untuk perasaanmu.
+          </p>
+
+          <div class="deskripsi-buttons">
+            <a href="#submission" class="primary-btn">Ungkapin Perasaan Kamu</a>
+            <a href="#ungkapin" class="secondary-btn">Lihat Catatan</a>
+          </div>
+        </div>
+
+        <div class="deskripsi-right">
+          <div class="banner-card">
+            <div class="banner-topbar">
+              <div class="window-dots" aria-hidden="true">
+                <span class="dot-pink"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+              </div>
+              <span class="window-label">ungkap.in // preview</span>
+            </div>
+            <img src="banner.png" alt="Ilustrasi Ungkapin" />
+          </div>
+        </div>
       </div>
+
+      <!-- Bottom tilted yellow CTA pill like reference image -->
+      <a href="#submission" class="tilted-pill-tag">100% Anonim · Langsung Tayang</a>
     </div>
+
+    <!-- 4-point star sitting on the section border -->
+    <svg class="section-star" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
+      <path d="M20 0 C21.5 14 26 18.5 40 20 C26 21.5 21.5 26 20 40 C18.5 26 14 21.5 0 20 C14 18.5 18.5 14 20 0 Z" fill="#000" />
+    </svg>
   </section>
-  
 
-<!-- Features -->
-<section id="features" class="features-section">
-  <div class="container">
-    <h2>Fitur Ungkap.in</h2>
-    <p>Platform untuk mengungkapkan isi hati secara aman dan anonim.</p>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="icon" style="background-color: #fbd38d;">🧑</div>
-        <h3>Anonim</h3>
-        <p>Tulisanmu tidak akan menampilkan nama atau identitas apa pun, menjaga privasimu sepenuhnya.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon" style="background-color: #c6f6d5;">📄</div>
-        <h3>Maks 200 Kata</h3>
-        <p>Setiap kiriman dibatasi 200 kata agar tetap singkat, padat, dan bermakna.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon" style="background-color: #bee3f8;">📤</div>
-        <h3>Langsung Tayang</h3>
-        <p>Kirimanmu langsung tampil tanpa perlu proses seleksi atau moderasi yang lama.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Ungkapin (3 Ungkapan Terbaru) -->
-<section id="ungkapin" class="ungkapin-section">
-  <div class="container">
-    <h2>Ungkapan Terbaru</h2>
-    <p>Lihat beberapa perasaan terbaru yang dibagikan secara anonim.</p>
-
-    <div id="latestSubmissions" class="ungkapin-grid"></div>
-
-    <div class="lihat-semua-container">
-      <a href="semua.html" class="lihat-semua-btn">Lihat Semua</a>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Submission Section -->
-  <section id="submission" class="section-grey-background">
+  <!-- FEATURES -->
+  <section id="features" class="features-section cyan-bg">
     <div class="container">
-      <center><h2>Ungkapkan Sekarang</h2></center>
-      <form id="submissionForm">
-        <input type="text" id="name" placeholder="Nama (Anonim diperbolehkan)"required/>
-        <textarea id="message" placeholder="Tulis perasaanmu (maks 200 kata)" maxlength="1500" required></textarea>
-        <center><button class="primary-btn" type="submit">Kirim</button></center>
-      </form>
-  
-      <div id="notif" class="notif">Ungkapan berhasil dikirim!</div>
-  
-      <div id="latestSubmissions" class="submission-grid"></div>
-  
-      
+      <div class="section-header-wrap">
+        <div class="section-pill">FITUR UNGKAP.IN</div>
+        <p class="section-subtitle">Platform untuk mengungkapkan isi hati secara aman, ringkas, dan anonim.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-swatch" style="background-color: #FE90E8;">
+            <span class="swatch-icon" aria-hidden="true">🧑</span>
+            <span class="swatch-code">PRIVASI</span>
+          </div>
+          <div class="feature-card-body">
+            <h3>Anonim</h3>
+            <p>Tulisanmu tidak akan menampilkan identitas pribadi apa pun, menjaga privasimu sepenuhnya.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-swatch" style="background-color: #99E885;">
+            <span class="swatch-icon" aria-hidden="true">📄</span>
+            <span class="swatch-code">RINGKAS</span>
+          </div>
+          <div class="feature-card-body">
+            <h3>Maks 200 Kata</h3>
+            <p>Setiap kiriman dibatasi 200 kata agar tetap singkat, padat, dan bermakna.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-swatch" style="background-color: #F7CB46;">
+            <span class="swatch-icon" aria-hidden="true">📤</span>
+            <span class="swatch-code">REALTIME</span>
+          </div>
+          <div class="feature-card-body">
+            <h3>Langsung Tayang</h3>
+            <p>Kirimanmu langsung tampil tanpa perlu proses seleksi atau moderasi yang lama.</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- About Me -->
-<footer id="about">
-  <h3>Dibuat oleh Sadako</h3>
-  <p>Game Developer</p>
-  <div class="socials">
-    <a href="https://github.com/muhamadsahrulll" target="_blank" class="social-icon">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-    <a href="https://www.instagram.com/sahrulllxd/" target="_blank" class="social-icon">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-  </div>
-</footer>
+  <!-- UNGKAPAN TERBARU -->
+  <section id="ungkapin" class="ungkapin-section dot-bg">
+    <div class="container">
+      <div class="section-header-wrap">
+        <div class="section-pill">UNGKAPAN TERBARU</div>
+        <p class="section-subtitle">Lihat 3 perasaan terbaru yang dibagikan secara anonim oleh pengunjung.</p>
+      </div>
+
+      <div id="latestSubmissions" class="ungkapin-grid">
+        <div class="status-card">Memuat ungkapan terbaru...</div>
+      </div>
+
+      <div class="lihat-semua-container">
+        <a href="semua.html" class="lihat-semua-btn">Lihat Semua Ungkapan &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMISSION FORM -->
+  <section id="submission" class="submission-section peach-bg">
+    <div class="container">
+      <div class="form-card">
+        <div class="form-card-header">
+          <span class="form-badge">TULIS CATATAN</span>
+          <h2>Ungkapkan Sekarang</h2>
+        </div>
+
+        <form id="submissionForm" class="form-body">
+          <div class="field-group">
+            <label for="name">Nama / Samaran</label>
+            <input type="text" id="name" placeholder="Nama (Anonim diperbolehkan)" maxlength="50" required />
+          </div>
+
+          <div class="field-group">
+            <div class="label-row">
+              <label for="message">Isi Hatimu</label>
+              <span id="wordCounter" class="counter-pill">0 / 200 kata</span>
+            </div>
+            <textarea id="message" placeholder="Tulis perasaanmu di sini (maks 200 kata)..." maxlength="1500" rows="5" required></textarea>
+          </div>
+
+          <button id="submitBtn" class="primary-btn submit-btn" type="submit">Kirim Ungkapan</button>
+          <div id="cooldownNotice" class="cooldown-notice" role="status" aria-live="polite"></div>
+          <p class="retention-note">Anti-spam 10 detik aktif untuk setiap kiriman. Maksimal 30 ungkapan tersimpan — entri paling lama otomatis terhapus.</p>
+        </form>
+
+        <div id="notif" class="notif" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="about" class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-pill">ungkap.in</span>
+        <h3>Dibuat oleh Sadako</h3>
+        <p>Game Developer</p>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/muhamadsahrulll" target="_blank" rel="noopener noreferrer" class="social-pill social-cyan">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.03 11.03 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.instagram.com/sahrulllxd/" target="_blank" rel="noopener noreferrer" class="social-pill social-pink">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect>
+            <circle cx="12" cy="12" r="4.5"></circle>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <script type="module" src="script.js"></script>
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("navMenu");
-    const openIcon = hamburger.querySelector(".open");
-    const closeIcon = hamburger.querySelector(".close");
-  
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-      const isOpen = navMenu.classList.contains("show");
-  
-      openIcon.style.display = isOpen ? "none" : "inline";
-      closeIcon.style.display = isOpen ? "inline" : "none";
-    });
-  </script>
 </body>
 </html>
